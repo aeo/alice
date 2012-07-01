@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<div id="content"></div>
+<script>
+  // Dummy the page content
+  (function() {
+    var alpha = "abcdefghijklmnopqrstuvwxyz    ".split("")
+      , len = alpha.length
+      , chars = 100000
+      , wordsish = ""
+    ;
+
+    while (chars--) {
+      wordsish += alpha[Math.floor(Math.random() * len)];
+    }
+
+    document.getElementById("content").innerHTML = wordsish;
+  })();
+</script>
+
+<script src="../dist/alice-shim.min.js"></script>
+<script src="dash.js"></script>
+<script src="test.js"></script>
+
