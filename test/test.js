@@ -2,13 +2,15 @@
 // They should probably be refactored to use QUnit or Mocha
 // Also should incorporate with phantomjs + travis-ci
 
-/*globals alice dash */
+/*globals dash */
 (function( alice, window ) {
   "use strict";
 
   function waitAndDo( cb ) {
     setTimeout(cb, 60);
   }
+
+  // Test after -------------------------------------------
 
   function testAfter1( done ) {
     var youDidIt = false
@@ -111,6 +113,8 @@
     });
   }
 
+  // Test before -------------------------------------------
+
   function testBefore1( done ) {
     var youDidIt = false
       , youDidItAgain = false
@@ -212,6 +216,156 @@
     });
   }
 
+  // Test range -------------------------------------------
+
+  function testRange1( done ) {
+    var youDidIt = false
+      , youDidItAgain = false
+    ;
+
+    alice.range(function() {
+      if (youDidIt) {
+        youDidItAgain = true;
+      }
+      youDidIt = true;
+    }, 80, 180);
+
+    window.scrollTo(0, 3000);
+    waitAndDo(function() {
+      window.scrollTo(0, 100);
+
+      waitAndDo(function() {
+          window.scrollTo(0, 120);
+
+          waitAndDo(function() {
+            done(youDidIt && !youDidItAgain);
+          });
+        });
+    });
+  }
+
+  function testRange2( done ) {
+    var youDidIt = false
+      , youDidItAgain = false
+    ;
+
+    alice.range(function() {
+      if (youDidIt) {
+        youDidItAgain = true;
+      }
+      youDidIt = true;
+    }, 80, 180);
+
+    window.scrollTo(0, 3000);
+    waitAndDo(function() {
+      window.scrollTo(0, 100);
+
+      waitAndDo(function() {
+        window.scrollTo(0, 120);
+
+        waitAndDo(function() {
+          window.scrollTo(0, 300);
+
+          waitAndDo(function() {
+            done(youDidIt && !youDidItAgain);
+          });
+        });
+      });
+    });
+  }
+
+  function testRange3( done ) {
+    var youDidIt = false
+      , youDidItAgain = false
+    ;
+
+    alice.range(function() {
+      if (youDidIt) {
+        youDidItAgain = true;
+      }
+      youDidIt = true;
+    }, 80, 180);
+
+    window.scrollTo(0, 3000);
+    waitAndDo(function() {
+      window.scrollTo(0, 100);
+
+      waitAndDo(function() {
+        window.scrollTo(0, 120);
+
+        waitAndDo(function() {
+          window.scrollTo(0, 10);
+
+          waitAndDo(function() {
+            done(youDidIt && !youDidItAgain);
+          });
+        });
+      });
+    });
+  }
+
+  function testRange4( done ) {
+    var youDidIt = false
+      , youDidItAgain = false
+    ;
+
+    alice.range(function() {
+      if (youDidIt) {
+        youDidItAgain = true;
+      }
+      youDidIt = true;
+    }, 80, 180);
+
+
+    window.scrollTo(0, 3000);
+    waitAndDo(function() {
+      window.scrollTo(0, 100);
+
+      waitAndDo(function() {
+        window.scrollTo(0, 10);
+
+        waitAndDo(function() {
+          window.scrollTo(0, 120);
+
+          waitAndDo(function() {
+            done(youDidIt && youDidItAgain);
+          });
+        });
+      });
+    });
+  }
+
+  function testRange5( done ) {
+    var youDidIt = false
+      , youDidItAgain = false
+    ;
+
+    alice.range(function() {
+      if (youDidIt) {
+        youDidItAgain = true;
+      }
+      youDidIt = true;
+    }, 80, 180, true);
+
+
+    window.scrollTo(0, 3000);
+    waitAndDo(function() {
+      window.scrollTo(0, 100);
+
+      waitAndDo(function() {
+        window.scrollTo(0, 120);
+
+        waitAndDo(function() {
+          window.scrollTo(0, 10);
+
+          waitAndDo(function() {
+            done(youDidIt && youDidItAgain);
+          });
+        });
+      });
+    });
+  }
+
   dash([
       testAfter1
     , testAfter2
@@ -221,6 +375,11 @@
     , testBefore2
     , testBefore3
     , testBefore4
+    , testRange1
+    , testRange2
+    , testRange3
+    , testRange4
+    , testRange5
   ]);
 
 })((window.jQuery || window).alice, window);
