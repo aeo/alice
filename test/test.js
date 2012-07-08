@@ -366,6 +366,82 @@
     });
   }
 
+  // Test at -------------------------------------------
+
+  function testAt1( done ) {
+    var youDidIt = false
+      , youDidItAgain = false
+    ;
+
+    alice.at(function() {
+      if (youDidIt) {
+        youDidItAgain = true;
+      }
+      youDidIt = true;
+    }, 80);
+
+    window.scrollTo(0, 0);
+    waitAndDo(function() {
+      window.scrollTo(0, 100);
+
+      waitAndDo(function() {
+        done(youDidIt && !youDidItAgain);
+      });
+    });
+  }
+
+  function testAt2( done ) {
+    var youDidIt = false
+      , youDidItAgain = false
+    ;
+
+    alice.at(function() {
+      if (youDidIt) {
+        youDidItAgain = true;
+      }
+      youDidIt = true;
+    }, 80);
+
+    window.scrollTo(0, 0);
+    waitAndDo(function() {
+      window.scrollTo(0, 100);
+
+      waitAndDo(function() {
+        window.scrollTo(0, 10);
+
+        waitAndDo(function() {
+          done(youDidIt && youDidItAgain);
+        });
+      });
+    });
+  }
+
+  function testAt3( done ) {
+    var youDidIt = false
+      , youDidItAgain = false
+    ;
+
+    alice.at(function() {
+      if (youDidIt) {
+        youDidItAgain = true;
+      }
+      youDidIt = true;
+    }, 80);
+
+    window.scrollTo(0, 0);
+    waitAndDo(function() {
+      window.scrollTo(0, 100);
+
+      waitAndDo(function() {
+        window.scrollTo(0, 300);
+
+        waitAndDo(function() {
+          done(youDidIt && !youDidItAgain);
+        });
+      });
+    });
+  }
+
   dash([
       testAfter1
     , testAfter2
@@ -380,6 +456,9 @@
     , testRange3
     , testRange4
     , testRange5
+    , testAt1
+    , testAt2
+    , testAt3
   ]);
 
 })((window.jQuery || window).alice, window);
