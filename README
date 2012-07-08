@@ -25,24 +25,6 @@ _For the remainder of the documentation, the examples will be shown using
 syntax with jQuery._
 
 
-Getting Alice
--------------
-
-There are multiple production distributions of Alice. The standard build
-assumes that your application is already using the [jQuery](jquery.org) and
-[lo-dash](lodash.org)/[underscore](underscore.org) libraries, and that you
-would like the helper methods (`at`, `after`, `before`, and `range`) included.
-
-Alice + helper methods:
-  - [Using jQuery and underscore]() (1.1k)
-  - [Using jQuery but not underscore]() (1.4k)
-  - [Standalone]() (1.9k)
-
-Core-only versions:
-  - [Using jQuery and underscore]() (.5k)
-  - [Standalone]() (1.3k)
-
-
 Usage
 -----
 
@@ -125,6 +107,24 @@ positions (ie. after the first position but before the second position).
 
 Note that this example leveraged the `diff` argument. The `diff` argument is
 the **relative** scroll position (in pixels) from `scrollPositionStart`.
+
+
+Getting Alice
+-------------
+
+There are multiple production distributions of Alice. The standard build
+assumes that your application is already using the [jQuery](jquery.org) and
+[lo-dash](lodash.org)/[underscore](underscore.org) libraries, and that you
+would like the helper methods (`at`, `after`, `before`, and `range`) included.
+
+Alice + helper methods:
+  - [Using jQuery and underscore]() (1.1k)
+  - [Using jQuery but not underscore]() (1.4k)
+  - [Standalone]() (1.9k)
+
+Core-only versions:
+  - [Using jQuery and underscore]() (.5k)
+  - [Standalone]() (1.3k)
 
 
 License
