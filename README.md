@@ -1,7 +1,7 @@
 Alice.js
 ========
 
-A Javascript library for attaching callbacks to scroll positions.
+A Javascript library for attaching callbacks to vertical scroll positions.
 Functionality can be triggered based on the user scrolling (up or down)
 past a specific point, only once past a point in a specific direction,
 while the scroll position is within a certain range, or via custom tests.
