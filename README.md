@@ -11,15 +11,19 @@ not exist, Alice will create an object `alice` in the global namespace.
 
 With jQuery:
 
-    $.alice.after(function() {
-      // Do something after 80 pixels
-    }, 80);
+```javascript
+$.alice.after(function() {
+  // Do something after 80 pixels
+}, 80);
+```
 
 Without jQuery:
 
-    alice.after(function() {
-      // Do something after 80 pixels
-    }, 80);
+```javascript
+alice.after(function() {
+  // Do something after 80 pixels
+}, 80);
+```
 
 _For the remainder of the documentation, the examples will be shown using
 syntax with jQuery._
@@ -37,15 +41,17 @@ The `at` method is simplest way to use Alice. The method takes a pair of
 arguments: a function to run once the window is scrolled past a specific top
 position and the top position (in pixels).
 
-    var myElement = $(".attached");
+```javascript
+var myElement = $(".attached");
 
-    var callback = function( diff, goingDown ) {
-          myElement.css("position", goingDown ? "fixed" : "absolute");
-        }
-      , scrollPosition = 320
-    ;
+var callback = function( diff, goingDown ) {
+      myElement.css("position", goingDown ? "fixed" : "absolute");
+    }
+  , scrollPosition = 320
+;
 
-    $.alice.at(callback, scrollPosition);
+$.alice.at(callback, scrollPosition);
+```
 
 Note that this example leveraged the `goingDown` argument. This second
 argument, `goingDown`, is (a boolean value) regarding whether the
@@ -58,32 +64,36 @@ is scrolled past a specific top position, the top position (in pixels), and
 a (boolean) flag representing whether the callback should run repeatedly
 (or only once) after the window is scrolled past the specified position.
 
-    var myElement = $(".attached");
+```javascript
+var myElement = $(".attached");
 
-    var callback = function( diff, goingDown ) {
-          myElement.css("position", "fixed");
-        }
-      , scrollPosition = 320
-      , repeat = false
-    ;
+var callback = function( diff, goingDown ) {
+      myElement.css("position", "fixed");
+    }
+  , scrollPosition = 320
+  , repeat = false
+;
 
-    $.alice.after(callback, scrollPosition, repeat);
+$.alice.after(callback, scrollPosition, repeat);
+```
 
 ### Before
 
 The `before` method is exactly the same as the `after` method except it works
 in the opposite direction.
 
-    var myElement = $(".attached");
+```javascript
+var myElement = $(".attached");
 
-    var callback = function( diff, goingDown ) {
-          myElement.css("position", "absolute");
-        }
-      , scrollPosition = 320
-      , repeat = false
-    ;
+var callback = function( diff, goingDown ) {
+      myElement.css("position", "absolute");
+    }
+  , scrollPosition = 320
+  , repeat = false
+;
 
-    $.alice.before(callback, scrollPosition, repeat);
+$.alice.before(callback, scrollPosition, repeat);
+```
 
 ### Range
 
@@ -92,18 +102,20 @@ thus requires an additional top position to be defined. For this method, the
 callback function will run when the window is scrolled between the two given
 positions (ie. after the first position but before the second position).
 
-    var myElement = $(".flyAcross");
+```javascript
+var myElement = $(".flyAcross");
 
-    var callback = function( diff, goingDown ) {
-          var leftAdjust = 200 * diff / (scrollPositionEnd - scrollPositionStart) - 100;
-          myElement.css("left", diff + "%");
-        }
-      , scrollPositionStart = 320
-      , scrollPositionEnd = 720
-      , repeat = true
-    ;
+var callback = function( diff, goingDown ) {
+      var leftAdjust = 200 * diff / (scrollPositionEnd - scrollPositionStart) - 100;
+      myElement.css("left", diff + "%");
+    }
+  , scrollPositionStart = 320
+  , scrollPositionEnd = 720
+  , repeat = true
+;
 
-    $.alice.range(callback, scrollPositionStart, scrollPositionEnd, repeat);
+$.alice.range(callback, scrollPositionStart, scrollPositionEnd, repeat);
+```
 
 Note that this example leveraged the `diff` argument. The `diff` argument is
 the **relative** scroll position (in pixels) from `scrollPositionStart`.
