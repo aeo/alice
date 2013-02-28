@@ -4,20 +4,18 @@ module.exports = function( grunt ) {
 
   // Project configuration.
   grunt.initConfig({
-      lint: {
-        all: [
+      jshint: {
+        options: {
+            browser: true
+          , jquery: true
+          , laxcomma: true
+        }
+      , all: [
             "lib/*.js"
           , "shim/*.js"
         ]
       }
-    , jshint: {
-          options: {
-              browser: true
-            , jquery: true
-            , laxcomma: true
-          }
-      }
-    , min: {
+    , uglify: {
           dist: {
               src: [
                   "copy.js"
@@ -64,6 +62,9 @@ module.exports = function( grunt ) {
       }
   });
 
-  grunt.registerTask("default", "lint min");
+  grunt.loadNpmTasks("grunt-contrib-uglify");
+  grunt.loadNpmTasks("grunt-contrib-jshint");
+
+  grunt.registerTask("default", [ "jshint", "uglify" ]);
 
 };

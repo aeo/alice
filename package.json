@@ -11,6 +11,9 @@
     "test": "npm run-script bower && npm run-script test-index && npm run-script test-index-shim && npm run-script test-index-no_"
   },
   "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-jshint": "*",
     "bower": "~0.8.3",
     "mocha": "~1.8.1",
     "chai": "~1.5.0",

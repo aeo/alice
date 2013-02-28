@@ -1,0 +1,5 @@
+{
+  "browser": true,
+  "jquery": true,
+  "laxcomma": true
+}
