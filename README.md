@@ -1,5 +1,6 @@
 Alice.js
 ========
+[![Build Status](https://travis-ci.org/aeo/alice.png)](https://travis-ci.org/aeo/alice)
 
 A Javascript library for attaching callbacks to vertical scroll positions.
 Functionality can be triggered based on the user scrolling (up or down)
