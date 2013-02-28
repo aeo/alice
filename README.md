@@ -130,13 +130,13 @@ assumes that your application is already using the [jQuery](jquery.org) and
 would like the helper methods (`at`, `after`, `before`, and `range`) included.
 
 Alice + helper methods:
-  - [Using jQuery and underscore]() (1.1k)
-  - [Using jQuery but not underscore]() (1.4k)
-  - [Standalone]() (1.9k)
+  - [Using jQuery and underscore](https://github.com/aeo/alice/blob/master/dist/alice.min.js) (1.1k)
+  - [Using jQuery but not underscore](https://github.com/aeo/alice/blob/master/dist/alice-no_.min.js) (1.4k)
+  - [Standalone](https://github.com/aeo/alice/blob/master/dist/alice-shim.min.js) (1.9k)
 
 Core-only versions:
-  - [Using jQuery and underscore]() (.5k)
-  - [Standalone]() (1.3k)
+  - [Using jQuery and underscore](https://github.com/aeo/alice/blob/master/dist/alice-core.min.js) (.5k)
+  - [Standalone](https://github.com/aeo/alice/blob/master/dist/alice-core-shim.min.js) (1.3k)
 
 
 License
