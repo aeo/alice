@@ -1,0 +1,28 @@
+{
+  "name": "alice-js",
+  "version": "1.0.0",
+  "description": "A Javascript library for attaching callbacks to vertical scroll positions.",
+  "main": "test.js",
+  "scripts": {
+    "bower": "./node_modules/bower/bin/bower install jquery lodash",
+    "test-index": "./node_modules/mocha-phantomjs/bin/mocha-phantomjs test/index.html",
+    "test-index-shim": "./node_modules/mocha-phantomjs/bin/mocha-phantomjs test/index-shim.html",
+    "test-index-no_": "./node_modules/mocha-phantomjs/bin/mocha-phantomjs test/index-no_.html",
+    "test": "npm run-script bower && npm run-script test-index && npm run-script test-index-shim && npm run-script test-index-no_"
+  },
+  "devDependencies": {
+    "bower": "~0.8.3",
+    "mocha": "~1.8.1",
+    "chai": "~1.5.0",
+    "mocha-phantomjs": "~2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:aeo/alice.git"
+  },
+  "keywords": [
+    "scroll"
+  ],
+  "author": "Jacob Swartwood <swartwoodj@ae.com>",
+  "license": "MIT"
+}
