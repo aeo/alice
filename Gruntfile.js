@@ -5,20 +5,49 @@ module.exports = function( grunt ) {
   // Project configuration.
   grunt.initConfig({
       jshint: {
-          options: {
-              browser: true
-            , jquery: true
-            , laxcomma: true
-          }
+          options: grunt.file.readJSON('.jshintrc')
         , all: [
               "lib/*.js"
             , "shim/*.js"
           ]
       }
     , mocha_phantomjs: {
-          all: [
-              "test/**/*.html"
-          ]
+          all: {
+              src: [
+                  "test/*.html"
+              ]
+            , options: {
+                  reporter: "xunit"
+                , output: "reports/test.xml"
+              }
+          }
+      }
+    , blanket_mocha: {
+          all: {
+              src: [
+                  "test/*.html"
+              ]
+            , options: {
+                  reporter: "Spec"
+              }
+          }
+        , options: {
+              // Fail tests if coverage is less than 10%
+              threshold: 10
+          }
+      }
+    , plato: {
+          all: {
+              options: {
+                jshint: grunt.file.readJSON('.jshintrc')
+              }
+            , files: {
+                reports: [
+                    "lib/**/*.js"
+                  , "shim/*.js"
+                ]
+              }
+          }
       }
     , uglify: {
           dist: {
@@ -67,10 +96,21 @@ module.exports = function( grunt ) {
       }
   });
 
+  grunt.loadNpmTasks("grunt-contrib-connect");
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-mocha-phantomjs");
+  grunt.loadNpmTasks("grunt-blanket-mocha");
+  grunt.loadNpmTasks("grunt-plato");
 
-  grunt.registerTask("default", [ "jshint", "uglify", "mocha_phantomjs" ]);
+  grunt.registerTask("default", [
+      "jshint"
+    , "uglify"
+      // Run XUnit compatible tests for CI
+    // , "mocha_phantomjs"
+      // Run tests with Blanket coverage
+    , "blanket_mocha"
+    , "plato"
+  ]);
 
 };

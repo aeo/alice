@@ -5,19 +5,34 @@
 <script src="setup.js"></script>
 
 <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
-<div id="mocha"></div>
+<div class="hide" id="mocha"></div>
+<div class="hide" id="blanket-main"></div>
 <script src="../node_modules/mocha/mocha.js"></script>
 <script src="../node_modules/chai/chai.js"></script>
 <script>
-  mocha.ui("bdd");
-  mocha.slow(500);
-  mocha.reporter("html");
+  if (!window.mochaPhantomJS) {
+    document.write("<script src=\"../node_modules/blanket/dist/qunit/blanket.min.js\"><\/script>");
+    document.write("<script src=\"../node_modules/grunt-blanket-mocha/support/mocha-blanket.js\"><\/script>");
+  }
+</script>
+
+<script>
   chai.should();
+
+  mocha.setup({
+      ui: "bdd"
+    , slow: 500
+  });
+
+  if (!window.mochaPhantomJS && window.PHANTOMJS) {
+    blanket.options("reporter", "../node_modules/grunt-blanket-mocha/support/grunt-reporter.js");
+  }
 </script>
 
 <script src="../bower_components/jquery/jquery.min.js"></script>
 <script src="../bower_components/lodash/dist/lodash.min.js"></script>
-<script src="../dist/alice.min.js"></script>
+<script data-cover src="../lib/alice.js"></script>
+<script data-cover src="../lib/helpers.js"></script>
 <script src="before.js"></script>
 <script src="after.js"></script>
 <script src="range.js"></script>
