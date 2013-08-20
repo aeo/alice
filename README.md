@@ -33,6 +33,60 @@ syntax with jQuery._
 Usage
 -----
 
+### Basic
+
+Alice essentially takes a method to kick off as the user scrolls up/down the
+page. This is the base functionality that all of the Alice helper methods use.
+
+```javascript
+var myElement = $(".output");
+
+var callback = function( scrollPosition, goingDown ) {
+      myElement.html("Scroll position: " + scrollPosition);
+    }
+;
+
+$.alice(callback);
+```
+
+A scroll position can also be provided to `alice` to change the value passed
+into your callback to be a relative difference from that initial scroll
+position.
+
+```javascript
+var myElement = $(".output");
+
+var callback = function( diff, goingDown ) {
+      myElement.html(diff + " from " + scrollPosition);
+    }
+  , scrollPosition = 320
+;
+
+$.alice(callback, scrollPosition);
+```
+
+A method can also be provided as the second argument to `alice` to extend
+Alice in really weird ways.
+
+```javascript
+var myElement = $(".output")
+  , $win = $(window)
+;
+
+var callback = function( scrollPosition ) {
+      myElement.html("Horizontal scroll position: " + scrollPosition);
+    }
+  , test = function( position ) {
+      // Ignore `position` and return the horizontal scroll position
+      return $win.scrollLeft();
+    }
+;
+
+$.alice(callback, test);
+```
+
+### Helpers
+
 Alice comes with several fancy helper methods help you get started writing
 cool stuff immediately.
 
