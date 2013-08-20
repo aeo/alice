@@ -1,23 +1,26 @@
 {
   "name": "alice-js",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A Javascript library for attaching callbacks to vertical scroll positions.",
   "main": "test.js",
   "scripts": {
     "bower": "./node_modules/bower/bin/bower install jquery lodash",
+    "grunt": "./node_modules/grunt-cli/bin/grunt",
     "test-index": "./node_modules/mocha-phantomjs/bin/mocha-phantomjs test/index.html",
     "test-index-shim": "./node_modules/mocha-phantomjs/bin/mocha-phantomjs test/index-shim.html",
     "test-index-no_": "./node_modules/mocha-phantomjs/bin/mocha-phantomjs test/index-no_.html",
-    "test": "npm run-script bower && npm run-script test-index && npm run-script test-index-shim && npm run-script test-index-no_"
+    "test": "npm run bower && npm run grunt"
   },
   "devDependencies": {
-    "grunt": "~0.4.0",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-jshint": "*",
-    "bower": "~0.8.3",
-    "mocha": "~1.8.1",
-    "chai": "~1.5.0",
-    "mocha-phantomjs": "~2.0.0"
+    "grunt": "latest",
+    "grunt-cli": "latest",
+    "grunt-mocha-phantomjs": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-jshint": "latest",
+    "bower": "latest",
+    "mocha": "latest",
+    "chai": "latest",
+    "mocha-phantomjs": "latest"
   },
   "repository": {
     "type": "git",

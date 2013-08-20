@@ -5,15 +5,20 @@ module.exports = function( grunt ) {
   // Project configuration.
   grunt.initConfig({
       jshint: {
-        options: {
-            browser: true
-          , jquery: true
-          , laxcomma: true
-        }
-      , all: [
-            "lib/*.js"
-          , "shim/*.js"
-        ]
+          options: {
+              browser: true
+            , jquery: true
+            , laxcomma: true
+          }
+        , all: [
+              "lib/*.js"
+            , "shim/*.js"
+          ]
+      }
+    , mocha_phantomjs: {
+          all: [
+              "test/**/*.html"
+          ]
       }
     , uglify: {
           dist: {
@@ -64,7 +69,8 @@ module.exports = function( grunt ) {
 
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-contrib-jshint");
+  grunt.loadNpmTasks("grunt-mocha-phantomjs");
 
-  grunt.registerTask("default", [ "jshint", "uglify" ]);
+  grunt.registerTask("default", [ "jshint", "uglify", "mocha_phantomjs" ]);
 
 };
