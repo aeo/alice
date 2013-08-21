@@ -1,9 +1,9 @@
-<testsuite name="Mocha Tests" tests="16" failures="0" errors="0" skipped="0" timestamp="Tue, 20 Aug 2013 23:34:57 GMT" time="3.165">
+<testsuite name="Mocha Tests" tests="16" failures="0" errors="0" skipped="0" timestamp="Wed, 21 Aug 2013 14:13:09 GMT" time="3.162">
 <testcase classname="Alice #before()" name="should trigger once when scrolling up once" time="0.121"/>
-<testcase classname="Alice #before()" name="should trigger once when scrolling up twice" time="0.18"/>
+<testcase classname="Alice #before()" name="should trigger once when scrolling up twice" time="0.181"/>
 <testcase classname="Alice #before()" name="should trigger once when scrolling up once" time="0.181"/>
-<testcase classname="Alice #before() with repeat" name="should trigger once when scrolling up once" time="0.181"/>
-<testcase classname="Alice #after()" name="should trigger once when scrolling down once" time="0.121"/>
+<testcase classname="Alice #before() with repeat" name="should trigger once when scrolling up once" time="0.18"/>
+<testcase classname="Alice #after()" name="should trigger once when scrolling down once" time="0.12"/>
 <testcase classname="Alice #after()" name="should trigger once when scrolling down once and up once" time="0.181"/>
 <testcase classname="Alice #after()" name="should trigger once when scrolling down twice" time="0.181"/>
 <testcase classname="Alice #after() with repeat" name="should trigger twice scrolling down twice" time="0.181"/>
@@ -12,43 +12,43 @@
 <testcase classname="Alice #range()" name="should trigger once scrolling within range twice and ending before" time="0.241"/>
 <testcase classname="Alice #range()" name="should trigger twice scrolling in and out of range twice" time="0.241"/>
 <testcase classname="Alice #range() with repeat" name="should trigger twice scrolling within range twice" time="0.241"/>
-<testcase classname="Alice #at()" name="should trigger once when scrolling past once" time="0.122"/>
-<testcase classname="Alice #at()" name="should trigger twice when scrolling past twice" time="0.181"/>
-<testcase classname="Alice #at()" name="should trigger once when scrolling past once then scrolling further" time="0.181"/>
-</testsuite>
-<testsuite name="Mocha Tests" tests="16" failures="0" errors="0" skipped="0" timestamp="Tue, 20 Aug 2013 23:35:01 GMT" time="3.165">
-<testcase classname="Alice #before()" name="should trigger once when scrolling up once" time="0.122"/>
-<testcase classname="Alice #before()" name="should trigger once when scrolling up twice" time="0.181"/>
-<testcase classname="Alice #before()" name="should trigger once when scrolling up once" time="0.181"/>
-<testcase classname="Alice #before() with repeat" name="should trigger once when scrolling up once" time="0.181"/>
-<testcase classname="Alice #after()" name="should trigger once when scrolling down once" time="0.12"/>
-<testcase classname="Alice #after()" name="should trigger once when scrolling down once and up once" time="0.181"/>
-<testcase classname="Alice #after()" name="should trigger once when scrolling down twice" time="0.181"/>
-<testcase classname="Alice #after() with repeat" name="should trigger twice scrolling down twice" time="0.181"/>
-<testcase classname="Alice #range()" name="should trigger once scrolling within range twice" time="0.182"/>
-<testcase classname="Alice #range()" name="should trigger once scrolling within range twice and ending after" time="0.241"/>
-<testcase classname="Alice #range()" name="should trigger once scrolling within range twice and ending before" time="0.24"/>
-<testcase classname="Alice #range()" name="should trigger twice scrolling in and out of range twice" time="0.241"/>
-<testcase classname="Alice #range() with repeat" name="should trigger twice scrolling within range twice" time="0.242"/>
-<testcase classname="Alice #at()" name="should trigger once when scrolling past once" time="0.121"/>
-<testcase classname="Alice #at()" name="should trigger twice when scrolling past twice" time="0.181"/>
-<testcase classname="Alice #at()" name="should trigger once when scrolling past once then scrolling further" time="0.181"/>
-</testsuite>
-<testsuite name="Mocha Tests" tests="16" failures="0" errors="0" skipped="0" timestamp="Tue, 20 Aug 2013 23:35:06 GMT" time="3.166">
-<testcase classname="Alice #before()" name="should trigger once when scrolling up once" time="0.122"/>
-<testcase classname="Alice #before()" name="should trigger once when scrolling up twice" time="0.181"/>
-<testcase classname="Alice #before()" name="should trigger once when scrolling up once" time="0.181"/>
-<testcase classname="Alice #before() with repeat" name="should trigger once when scrolling up once" time="0.181"/>
-<testcase classname="Alice #after()" name="should trigger once when scrolling down once" time="0.121"/>
-<testcase classname="Alice #after()" name="should trigger once when scrolling down once and up once" time="0.181"/>
-<testcase classname="Alice #after()" name="should trigger once when scrolling down twice" time="0.181"/>
-<testcase classname="Alice #after() with repeat" name="should trigger twice scrolling down twice" time="0.181"/>
-<testcase classname="Alice #range()" name="should trigger once scrolling within range twice" time="0.18"/>
-<testcase classname="Alice #range()" name="should trigger once scrolling within range twice and ending after" time="0.241"/>
-<testcase classname="Alice #range()" name="should trigger once scrolling within range twice and ending before" time="0.242"/>
-<testcase classname="Alice #range()" name="should trigger twice scrolling in and out of range twice" time="0.241"/>
-<testcase classname="Alice #range() with repeat" name="should trigger twice scrolling within range twice" time="0.242"/>
 <testcase classname="Alice #at()" name="should trigger once when scrolling past once" time="0.12"/>
 <testcase classname="Alice #at()" name="should trigger twice when scrolling past twice" time="0.18"/>
+<testcase classname="Alice #at()" name="should trigger once when scrolling past once then scrolling further" time="0.181"/>
+</testsuite>
+<testsuite name="Mocha Tests" tests="16" failures="0" errors="0" skipped="0" timestamp="Wed, 21 Aug 2013 14:13:13 GMT" time="3.16">
+<testcase classname="Alice #before()" name="should trigger once when scrolling up once" time="0.121"/>
+<testcase classname="Alice #before()" name="should trigger once when scrolling up twice" time="0.181"/>
+<testcase classname="Alice #before()" name="should trigger once when scrolling up once" time="0.18"/>
+<testcase classname="Alice #before() with repeat" name="should trigger once when scrolling up once" time="0.181"/>
+<testcase classname="Alice #after()" name="should trigger once when scrolling down once" time="0.121"/>
+<testcase classname="Alice #after()" name="should trigger once when scrolling down once and up once" time="0.18"/>
+<testcase classname="Alice #after()" name="should trigger once when scrolling down twice" time="0.181"/>
+<testcase classname="Alice #after() with repeat" name="should trigger twice scrolling down twice" time="0.181"/>
+<testcase classname="Alice #range()" name="should trigger once scrolling within range twice" time="0.181"/>
+<testcase classname="Alice #range()" name="should trigger once scrolling within range twice and ending after" time="0.241"/>
+<testcase classname="Alice #range()" name="should trigger once scrolling within range twice and ending before" time="0.241"/>
+<testcase classname="Alice #range()" name="should trigger twice scrolling in and out of range twice" time="0.241"/>
+<testcase classname="Alice #range() with repeat" name="should trigger twice scrolling within range twice" time="0.241"/>
+<testcase classname="Alice #at()" name="should trigger once when scrolling past once" time="0.121"/>
+<testcase classname="Alice #at()" name="should trigger twice when scrolling past twice" time="0.181"/>
 <testcase classname="Alice #at()" name="should trigger once when scrolling past once then scrolling further" time="0.18"/>
+</testsuite>
+<testsuite name="Mocha Tests" tests="16" failures="0" errors="0" skipped="0" timestamp="Wed, 21 Aug 2013 14:13:18 GMT" time="3.162">
+<testcase classname="Alice #before()" name="should trigger once when scrolling up once" time="0.121"/>
+<testcase classname="Alice #before()" name="should trigger once when scrolling up twice" time="0.181"/>
+<testcase classname="Alice #before()" name="should trigger once when scrolling up once" time="0.18"/>
+<testcase classname="Alice #before() with repeat" name="should trigger once when scrolling up once" time="0.181"/>
+<testcase classname="Alice #after()" name="should trigger once when scrolling down once" time="0.121"/>
+<testcase classname="Alice #after()" name="should trigger once when scrolling down once and up once" time="0.18"/>
+<testcase classname="Alice #after()" name="should trigger once when scrolling down twice" time="0.182"/>
+<testcase classname="Alice #after() with repeat" name="should trigger twice scrolling down twice" time="0.18"/>
+<testcase classname="Alice #range()" name="should trigger once scrolling within range twice" time="0.181"/>
+<testcase classname="Alice #range()" name="should trigger once scrolling within range twice and ending after" time="0.241"/>
+<testcase classname="Alice #range()" name="should trigger once scrolling within range twice and ending before" time="0.241"/>
+<testcase classname="Alice #range()" name="should trigger twice scrolling in and out of range twice" time="0.241"/>
+<testcase classname="Alice #range() with repeat" name="should trigger twice scrolling within range twice" time="0.241"/>
+<testcase classname="Alice #at()" name="should trigger once when scrolling past once" time="0.12"/>
+<testcase classname="Alice #at()" name="should trigger twice when scrolling past twice" time="0.181"/>
+<testcase classname="Alice #at()" name="should trigger once when scrolling past once then scrolling further" time="0.181"/>
 </testsuite>

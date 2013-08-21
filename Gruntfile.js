@@ -12,7 +12,7 @@ module.exports = function( grunt ) {
           ]
       }
     , mocha_phantomjs: {
-          all: {
+          xunit: {
               src: [
                   "test/*.html"
               ]
@@ -21,6 +21,20 @@ module.exports = function( grunt ) {
                 , output: "reports/test.xml"
               }
           }
+        // , all: {
+        //       src: [
+        //           "test/*.html"
+        //       ]
+        //   }
+        // , blanket: {
+        //       src: [
+        //           "test/*.html"
+        //       ]
+        //     , options: {
+        //           reporter: "mocha-lcov-reporter"
+        //         , output: "reports/coverage.xml"
+        //       }
+        //   }
       }
     , blanket_mocha: {
           all: {
@@ -96,7 +110,6 @@ module.exports = function( grunt ) {
       }
   });
 
-  grunt.loadNpmTasks("grunt-contrib-connect");
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-mocha-phantomjs");
@@ -107,7 +120,7 @@ module.exports = function( grunt ) {
       "jshint"
     , "uglify"
       // Run XUnit compatible tests for CI
-    // , "mocha_phantomjs"
+    , "mocha_phantomjs"
       // Run tests with Blanket coverage
     , "blanket_mocha"
     , "plato"
