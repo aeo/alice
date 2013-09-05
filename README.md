@@ -126,8 +126,8 @@ Getting Alice
 -------------
 
 There are multiple production distributions of Alice. The standard build
-assumes that your application is already using the [jQuery](jquery.org) and
-[lo-dash](lodash.org)/[underscore](underscore.org) libraries, and that you
+assumes that your application is already using the [jQuery](http://jquery.com) and
+[lo-dash](http://lodash.com)/[underscore](http://underscorejs.org) libraries, and that you
 would like the helper methods (`at`, `after`, `before`, and `range`) included.
 
 Alice + helper methods:
